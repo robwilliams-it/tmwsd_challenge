@@ -1,1 +1,18 @@
-h1 TMWSD is #{adjective}!
+doctype html
+html 
+    body
+        h1 TMWSD is #{adjective}!
+
+        //- new message input form
+        form(role='form' method="POST" action="/message" )
+            div.form-group
+                label(for='message') Message:
+                input(name='message' .form-control value='', type='text', placeholder='destructable message') 
+            button(id='submit', type='submit') Submit 
+
+        //- list of messages  
+        if messages
+            -for (let i = 0; i < messages.length; i++)
+                p(message_id=messages[i].message_id) 
+                    a(href=`/message/${messages[i].message_id}`) secret message ##{i + 1}
+
