@@ -3,9 +3,6 @@ var router = express.Router()
 const db = require('../database');
 
 router.get('/', function (req, res) {
-  // send 
-  // link for the new message form
-  // links for all existing messages
   db.getMessages()
   .then((messageData)=> {
     res.render('messages/index', { adjective: 'amazing', messages: messageData });
@@ -17,7 +14,6 @@ router.get('/', function (req, res) {
 })
 
 router.post('/message', function (req, res) {
-  // store message
   const message = req.body.null;
   if (message.length < 1) {
     db.getMessages()
@@ -50,7 +46,7 @@ router.get('/message/*', function (req, res) {
   const messageID = req.url.slice(req.url.lastIndexOf('/') + 1);
   db.getMessageByID(messageID)
   .then((messageData)=> {
-    res.render('messages/singleMessage', { message: messageData[0] });
+    res.render('messages/singleMessage', { adjective: 'Destroyed', message: messageData[0] });
     return (messageData[0].message_id)
   })
   .then((id)=>{

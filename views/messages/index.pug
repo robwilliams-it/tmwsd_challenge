@@ -1,14 +1,23 @@
 doctype html
 html 
+    head
+        style
+            include ../style/style.css
     body
         h1 TMWSD is #{adjective}!
-
-        //- new message input form
-        form(role='form' method="POST" action="/message" )
-            div.form-group
-                label(for='message') Message:
-                input(name='message' .form-control value='', type='text', placeholder='destructable message') 
-            button(id='submit', type='submit') Submit 
+        box
+            //- new message input form
+            form( id="messagebox" role='form' method="POST" action="/message" )
+                div.form-group
+                    label(for='message') Message:
+                    input(
+                        name='message' 
+                        .form-control value='', 
+                        type='text', 
+                        placeholder='destructable message' 
+                        maxlength="1000"
+                    ) 
+                button(id='submit', type='submit') Submit 
 
         //- list of messages  
         if messages

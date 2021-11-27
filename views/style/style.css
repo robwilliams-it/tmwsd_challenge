@@ -1,0 +1,21 @@
+body {
+    display: grid;
+    justify-items: center;
+}
+
+box{
+    width: 500px;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    border: 2px solid ghostwhite;
+    box-shadow: 5px 5px 5px lightgray;
+    padding: 10px;
+}
+
+form input {
+    width: 425px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+

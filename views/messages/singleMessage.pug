@@ -1,4 +1,11 @@
-p(message_id=message.message_id) #{message.body}
-
-form(role='form' method="GET" action="/" ) 
-    button(id='return', type='submit') Return
+doctype html
+html 
+    head
+        style
+            include ../style/style.css
+    body
+        h1 TMWSD has already #{adjective} this message!
+        box
+            p(message_id=message.message_id) #{message.body}
+            form(role='form' method="GET" action="/" ) 
+                button(id='return', type='submit') Return
