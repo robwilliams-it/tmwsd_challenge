@@ -29,3 +29,79 @@ Bonus points for making it look pretty :sparkles:
 ## Step 3: Submit
 
 Email me when you're done with a link to your fork.
+
+## DB Setup
+
+### Install
+Download PostgreSQL app from the below link
+
+Postgres.app with PostgreSQL 14 (Universal)
+https://postgresapp.com/downloads.html
+
+Install the file and move into applications
+
+Open the application and click on the button under the elephant that says "Initialize"
+
+Postgres is now ready to be used
+
+
+### User Setup
+
+Open your terminal and enter the below to enter into postgresql
+``` bash
+psql
+```
+
+To create the test user for this simple app copy and paste the below into your terminal
+``` bash
+CREATE USER test WITH SUPERUSER;
+```
+
+To exit postgresql hold the control key and press the d key
+
+### Clone this repo
+
+Open your terminal and migrate to the folder you wish to download this repo to
+
+Run the below line to clone the repo to your computer
+
+``` bash
+git clone https://github.com/robwilliams-it/tmwsd_challenge.git
+```
+
+### Run the Schema
+
+Open your terminal and migrate to the "database" folder within your copy of this project
+
+Run the below command in your terminal
+``` bash
+psql < messages.schema
+```
+
+### Test AwAy !
+
+Open your termnial and migrate to the tmwsd_challenge folder
+
+Run the below command
+``` bash
+npm install
+node app.js
+```
+
+In your browser open the below address
+http://localhost:3000/
+
+### Delete User After Test
+
+Open your terminal and enter the below to enter into postgresql
+``` bash
+psql
+```
+
+Copy and paste the below into your terminal
+
+``` bash
+DROP USER test;
+```
+
+To exit postgresql hold the control key and press the d key
